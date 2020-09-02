@@ -1,34 +1,41 @@
 package spring.project.petclinicproject.services.map;
 
-import java.util.Set;
+import org.springframework.stereotype.Service;
 import spring.project.petclinicproject.model.Owner;
-import spring.project.petclinicproject.services.CrudService;
+import spring.project.petclinicproject.services.OwnerService;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements
-    CrudService<Owner, Long> {
+import java.util.Set;
 
-  @Override
-  public Set<Owner> findAll() {
-    return super.findAll();
-  }
+@Service
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
-  @Override
-  public void deleteById(Long id) {
-    super.findById(id);
-  }
+    @Override
+    public Set<Owner> findAll() {
+        return super.findAll();
+    }
 
-  @Override
-  public void delete(Owner object) {
-    super.delete(object);
-  }
+    @Override
+    public void deleteById(Long id) {
+        super.findById(id);
+    }
 
-  @Override
-  public Owner save(Owner object) {
-    return super.save(object.getId(), object);
-  }
+    @Override
+    public void delete(Owner object) {
+        super.delete(object);
+    }
 
-  @Override
-  public Owner findById(Long id) {
-    return super.findById(id);
-  }
+    @Override
+    public Owner save(Owner object) {
+        return super.save(object.getId(), object);
+    }
+
+    @Override
+    public Owner findById(Long id) {
+        return super.findById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
+    }
 }
